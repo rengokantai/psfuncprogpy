@@ -25,3 +25,14 @@ def s(n,acc=0):
 print(s(10))
 ```
 
+
+
+### 6 Demo: Fibonacci,Trampoline Style
+```
+import types
+def tramp(gen, *args, **kwargs):
+  g = gen(*args, **kwargs)
+  while isinstance(g,types.GeneratorType):
+    g = next(g)
+  return g
+  ```
